@@ -1,0 +1,48 @@
+<div class="card">
+    <form (ngSubmit)="updateConsumer()">
+        <div class="card-header">
+            {{title}}
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td><label>Consumer Number</label></td>
+                            <td><input type="text" name="consumerNumber" [(ngModel)]="consumers.consumerNumber"></td>
+                        </tr>
+                        <tr>
+                            <td><label>Consumer Name</label></td>
+                            <td><input type="text" name="consumerName"  [(ngModel)]="consumers.consumerName"></td>
+                        </tr>
+                        <tr>
+                            <td><label>House Name / House Number</label></td>
+                            <td><input type="text" name="houseName" [(ngModel)]="consumers.houseName"></td>
+                        </tr>
+                        <tr>
+                            <td><label>Last Bill Amount</label></td>
+                            <td><input type="number" name="lastBillAmount" [(ngModel)]="consumers.lastBillAmount"></td>
+                        </tr>
+                        <tr>
+                            <td><label>Last Meter Reading</label></td>
+                            <td><input type="number" name="lastMeterReading" [(ngModel)]="consumers.lastMeterReading"></td>
+                        </tr>
+                        <tr>
+                            <td><label> Last meter reading date</label></td>
+                            <td><input type="text" name="lastMeterReadingDate" [(ngModel)]="consumers.lastMeterReadingDate"></td>
+                        </tr>
+                        <tr>
+                            <td><label>Connection type</label></td>
+                            <td><input type="text" name="connectionType" [(ngModel)]="consumers.connectionType"></td>
+                        </tr>
+                        
+                        <tr>
+                            <td></td>
+                            <td><input type="submit" style="background-color:darkred; color:white" value="Submit" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </form>
+</div>

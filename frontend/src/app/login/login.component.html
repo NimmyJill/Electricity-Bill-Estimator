@@ -1,0 +1,39 @@
+<div class="container" style="background-color: wheat; border: 2px solid maroon; border-radius: 2vw; padding: 2vw; ">
+    <div class="heading">
+        <h1 style="text-align: center;">Login</h1>
+    </div>
+
+    <!-- <div class="alert alert-warning alert-dismissible fade show" role="alert" style="color: red; padding:2vh 3vw; background-color:black;">
+      <%=status%>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div> -->
+
+    <form  (ngSubmit)="login()">
+        
+
+       <div class="form-control">
+           <label >Consumer Name</label> &nbsp;
+           <input type="text"  placeholder="Enter email" id="username" name="name"  [(ngModel)]="userDetails.consumerName">
+           
+       </div>
+       
+       <div class="form-control">
+           <label >Password</label> &nbsp;
+           <input type="password"  placeholder="Enter password" id="pswd" name="pswd" [(ngModel)]="userDetails.password">
+           
+       </div>                 
+       
+       <button class="submit" type="submit">Submit</button>
+    <br>
+       <!-- <div class="form-control">  -->
+          <div class="login-sign">
+            <h6>Need an Account?</h6>
+            <a class="backto" style="text-decoration: none;font-size:large;" routerLink="/signup">Signup</a>
+          </div>
+        <!-- </div> -->
+  
+    
+      </form>
+   </div>
