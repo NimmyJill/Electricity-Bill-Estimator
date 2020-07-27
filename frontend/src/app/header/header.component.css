@@ -1,13 +1,35 @@
 /* body{
     background-image: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fswitchd.co.uk%2Fenergy%2Fguides%2Fread-energy-meter%2F&psig=AOvVaw0OuaTh7BLWe6lYJLb00KeJ&ust=1595312514046000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIiigseY2-oCFQAAAAAdAAAAABAF);
 } */
-
+h1{
+    margin: 5vw;
+    border-radius: 10vw;
+    font-size: 3vw; 
+    text-align: center;
+    height: 6vw;
+    text-transform: uppercase;
+    font-family: fantasy;
+    background-color: rgb(240, 241, 219);
+    color: rgb(20, 19, 19); 
+    opacity: .9;
+    font-size: 4vw;
+    letter-spacing: .2vw;
+}
 a{
     margin: .5vw;
     padding: 1vw;
     text-decoration: none;
     font-weight: bolder;
     color: rgb(34, 33, 33);
-    font-size: 25px;
+    font-size: 2vw;
+    background-color:paleturquoise;
+    color: rgb(17, 14, 14);
+    opacity: .9;
+    border-radius: 5px;
     
+}
+a:hover{
+    transform: scale(1.1);
+    background-color: rgb(247, 143, 105);
+    color: black;
 }

@@ -30,10 +30,9 @@ userDetails=<any>{}
       }
       else
       {
-          console.log("Valid Details!!");
-        this.router.navigate(['/bill']);
-
-         
+        localStorage.setItem('token',credential['token'])
+        console.log("Valid Details!!");
+        this.router.navigate(['/bill']);         
       }
     })
     // this.router.navigate(['/']);

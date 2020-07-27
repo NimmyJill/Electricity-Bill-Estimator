@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/ElectricityBillEstimator');
 
 
 
@@ -11,6 +10,6 @@ var CredentialSchema = new Schema({
     type:String
 });
 
-var Userdata = mongoose.model('Users', CredentialSchema);
+var Userdata = mongoose.model('users', CredentialSchema, 'users');
 
 module.exports = Userdata;

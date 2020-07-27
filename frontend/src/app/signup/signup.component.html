@@ -1,4 +1,4 @@
-<div class="container" style="background-color: papayawhip; border: 2px solid rebeccapurple; border-radius: 2vw;">
+<div class="container" >
     <div class="heading">
         <h1 style="text-align: center;">Create Your Account</h1>
     </div>
@@ -6,7 +6,7 @@
     
     <form (ngSubmit)="signup()">
         
-        <div class="cla" style="padding-left: 5vw;padding-top: 3vw; color: gray;">        
+        <div  style="padding-left: 5vw;padding-top: 3vw; color: gray;">        
             <h3>User Type</h3>          
               <label style="margin: 1vw; " class="radio-inline">
                 <input type="radio"  name="optradio" checked id="radioAdmin" value="admin">Admin
@@ -22,7 +22,7 @@
            <input type="text"  id="consumerName" name="consumerName" [(ngModel)]="userCredential.consumerName">
            
        </div>
-       
+       <br>
        <div class="form-control">
         <label >Password</label> &nbsp;
         <input type="password"  id="pswd" name="pswd" [(ngModel)]="userCredential.password" >
@@ -31,6 +31,6 @@
 
 
     <br>
-    <button class="submit" type="submit" style="margin: 2vw;">Submit</button>
+    <button class="submit" type="submit" style="margin: 2vw;margin-left: 20vw; background-color: rgb(204, 58, 58);font-size: large;">Submit</button>
  </form>
 </div>

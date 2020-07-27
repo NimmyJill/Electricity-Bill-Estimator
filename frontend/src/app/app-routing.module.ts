@@ -14,7 +14,7 @@ const routes: Routes = [
   {path:'login', component:LoginComponent},
   {path:'signup', component:SignupComponent},
   {path:'newConsumer', component:NewConsumerComponent},
-  {path:'updateConsumer:/id', component:UpdateConsumerComponent}
+  {path:'updateConsumer/:id', component:UpdateConsumerComponent}
 ];
 
 @NgModule({

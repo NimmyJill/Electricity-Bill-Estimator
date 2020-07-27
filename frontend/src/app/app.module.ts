@@ -25,7 +25,7 @@ import { UpdateConsumerComponent } from './update-consumer/update-consumer.compo
     SignupComponent,
     HomeComponent,
     NewConsumerComponent,
-    UpdateConsumerComponent
+    UpdateConsumerComponent,
   ],
   imports: [
     BrowserModule,

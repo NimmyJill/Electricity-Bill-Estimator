@@ -14,7 +14,15 @@ export class UpdateConsumerComponent implements OnInit, OnDestroy {
   consumers= new ConsumerDetailsModel(null,null,null,null,null,null,null);
   id;
   sub;
-  constructor(private consumerService: ConsumersService, private router: Router, private activatedRoute:ActivatedRoute) { }
+  constructor(public consumerService: ConsumersService, private router: Router, private activatedRoute:ActivatedRoute) { }
+  updateConsumer()
+  {
+    console.log(this.consumers);    
+    this.consumerService.updateConsumer(this.consumers);
+    console.log("Consumer details Updated");
+    alert("Updated a consumer's details!!");
+    this.router.navigate(['/admin']);
+  }
   ngOnInit(): void
   {
     this.sub=
@@ -30,20 +38,12 @@ export class UpdateConsumerComponent implements OnInit, OnDestroy {
                                               console.log(this.consumers);
                                                 });
   }
+  
+  
+  
+  
   ngOnDestroy()
   {
     this.sub.unsubscribe();
   }
-
-
-
-updateConsumer()
-  {
-    console.log(this.consumers);    
-    this.consumerService.updateConsumer(this.consumers);
-    console.log("Consumer details Updated");
-    alert("Updated a consumer's details!!");
-    this.router.navigate(['/admin']);
-  }
-
 }

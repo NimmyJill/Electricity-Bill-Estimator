@@ -8,32 +8,37 @@ import {HttpClient} from '@angular/common/http';
 
 
 export class ConsumersService {
-  private _deleteConsumerUrl='http://localhost:3113/deleteConsumer';
+  private _deleteConsumerUrl='http://localhost:3113/api/deleteConsumer';
 
   constructor( private http:HttpClient) { }
 getConsumers(){
-  return this.http.get("http://localhost:3113/admin");
+  return this.http.get("http://localhost:3113/api/admin");
 }
 
 newConsumer(item){
-  return this.http.post("http://localhost:3113/insert",{"consumer":item})
+  return this.http.post("http://localhost:3113/api/insert",{"consumer":item})
   .subscribe(data =>{ console.log(data)})
 }
 
 updateConsumer(item){
-  return this.http.post("http://localhost:3113/update",{"consumer":item})
+  
+  return this.http.post("http://localhost:3113/api/updateConsumer",{"consumer":item})
   .subscribe(data =>{ console.log(data)})
 }
 singleConsumer(id){
   
-  return this.http.post("http://localhost:3113/singleConsumer",{"id":id})
+  return this.http.post("http://localhost:3113/api/singleConsumer",{"id":id})
 
 }
 
 deleteConsumer(id){
   console.log(id);
   return this.http.post(this._deleteConsumerUrl,{"id":id}).subscribe((status)=>{
-    console.log(status);
+    if(status=="Deleted"){
+      alert("Consumer Deleted");
+   }else{
+     alert("File not found");
+   }
     
   })
 
@@ -42,7 +47,7 @@ deleteConsumer(id){
 fetchDetail(data){
   console.log("Service");  
   console.log(data);
-  return this.http.post("http://localhost:3113/bill", {"data":data})
+  return this.http.post("http://localhost:3113/api/bill", {"data":data})
 }
   
 }

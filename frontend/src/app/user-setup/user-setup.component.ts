@@ -19,8 +19,7 @@ title:String = "User-setup *Admin only"
   deleteConsumer(id){
     console.log("deleted" +id);
     this.ConsumersService.deleteConsumer(id);
-    alert("Consumer Deleted");
-    this.router.navigate(['/admin']);
+    window.location.reload();
   }
 
   //creating service object for calling getProducts()

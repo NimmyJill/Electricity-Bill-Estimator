@@ -25,7 +25,8 @@ userCredential=new userDetailsModel(null,null,null);
     }
     this.usersService.signup(this.userCredential);
     console.log("Created an Account");
-    this.router.navigate(['/login']);     
+    this.router.navigate(['/login']);   
+    return  
   }
 
 }

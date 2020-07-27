@@ -1,0 +1,9 @@
+.container{
+    background-color: rgb(226, 225, 216);
+    border: 2px solid rebeccapurple;
+    border-radius: 2vw;
+    height: 70vh;
+    width: 50vw;
+    align-items: center;
+    margin-top: 2vh;
+}

@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/ElectricityBillEstimator');
 
 
 const Schema = mongoose.Schema;
@@ -15,6 +14,6 @@ var NewConsumerSchema = new Schema({
     
 });
 
-var Consumerdata = mongoose.model('consumer', NewConsumerSchema);
+var Consumerdata = mongoose.model('consumer', NewConsumerSchema, 'consumer');
 
 module.exports = Consumerdata;
