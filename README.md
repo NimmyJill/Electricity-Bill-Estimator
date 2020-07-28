@@ -69,10 +69,3 @@
     <td>Rs. 150-150</td>
   </tr>
 </table>
-<<<<<<< HEAD
-<style>
-
-        </div>
-=======
-</div>
->>>>>>> d3614522d071baebeae6d5239012088be4da417b
