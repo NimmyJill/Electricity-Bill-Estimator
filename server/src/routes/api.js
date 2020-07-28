@@ -27,7 +27,8 @@ router.get('/admin', function(req,res){
 
 // var loginStatus;
 router.post('/login', function(req,res){
-    console.log("Test");
+    console.log("Test"); 
+
     res.header("Access-control-Allow-Origin", "*")
     res.header("Access-control-Allow-Methods: GET, POST,PATCH, PUT, DELETE, OPTIONS");
     // console.log(req.body);
@@ -40,7 +41,9 @@ router.post('/login', function(req,res){
 
         } else {
             if(!user){
-                res.status(401).send('Invalid Credential')
+                // alert('Invalid Credential!!')
+                res.status(200).send(null)
+               
 
             }  else {
                 let payload = {subject:user._id,type:user.type}

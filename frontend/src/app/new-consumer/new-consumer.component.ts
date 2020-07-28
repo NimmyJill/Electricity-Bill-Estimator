@@ -22,7 +22,7 @@ export class NewConsumerComponent implements OnInit {
     console.log("Called");
     alert("Success");
     this.router.navigate(['/admin']);
-    return
+    return true;
   }
 
 }

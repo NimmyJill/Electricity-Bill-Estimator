@@ -33,7 +33,7 @@
                         <td>{{details.lastMeterReadingDate}}</td>
                         <td>{{details.connectionType}}</td>
                         <td><button class="btn btn-warning" [routerLink]='["/updateConsumer",details._id]'>Update</button></td>
-                        <td><button class="btn btn-danger" (click)="deleteConsumer(consumers)">Delete</button></td>
+                        <td><button class="btn btn-danger" (click)="deleteConsumer(details._id)">Delete</button></td>
                        
                         </tr>
                 

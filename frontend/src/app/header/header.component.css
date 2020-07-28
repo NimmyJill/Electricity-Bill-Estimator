@@ -1,7 +1,51 @@
 /* body{
     background-image: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fswitchd.co.uk%2Fenergy%2Fguides%2Fread-energy-meter%2F&psig=AOvVaw0OuaTh7BLWe6lYJLb00KeJ&ust=1595312514046000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIiigseY2-oCFQAAAAAdAAAAABAF);
 } */
+#box {
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    /* width: 400px;
+    height: 200px; */
+    color: white;
+    /* font-family: 'Raleway'; */
+    font-size: 2.5rem;
+  }
+  .gradient-border {
+    --borderWidth: 3vw;
+    background: #1D1F20;
+    position: relative;
+    border-radius: var(--borderWidth);
+  }
+  .gradient-border:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+  }
+  
+  
+  @keyframes animatedgradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+  
 h1{
+    
     margin: 5vw;
     border-radius: 10vw;
     font-size: 3vw; 

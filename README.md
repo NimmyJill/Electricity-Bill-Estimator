@@ -4,8 +4,9 @@
   <li> Sign-up provision with admin type and other user type. Full access for admin only.</li>
   <li> CRUD operations in User-setup(*Admin only)</li>
   <li> Electricity Bill calculation for a span of 60 days is based on the tariff structure shown in the below table.</li>
-  <li> Forecasted bill amount of over usage and under usage is provided to users for better awareness of electricity usage.</li>
-
+  <li> Forecasted bill amount as per the current usage. </li>
+  <li> Forecasted bill amount with  1 unit additional or reduced usage per day is provided to users for better planning of electricity usage.</li>
+  <li> Marginal difference in the electricity consumption often lead to higher slab without subsidized rate. So knowing forecasted amount with 1 unit additional or reduced usage helps users in planning electricity usage during the rest of billing cycle.</li>
 </ul>
 
 <div class="table-responsive" >
@@ -35,7 +36,7 @@
   <tr>
     <td>151-200</td>
     <td>Rs.6.40</td>
-    <td>Rs. 75-130</td>
+    <td>Rs. 75-100</td>
   </tr>
   <tr>
     <td>201-250</td>
@@ -69,20 +70,5 @@
   </tr>
 </table>
 <style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-</style>
         </div>

@@ -19,6 +19,7 @@ title:String = "User-setup *Admin only"
   deleteConsumer(id){
     console.log("deleted" +id);
     this.ConsumersService.deleteConsumer(id);
+    alert('Deleted a consumer');
     window.location.reload();
   }
 
