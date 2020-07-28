@@ -1,10 +1,27 @@
-<div class="gradient-border" id="box"><h1>{{title}}</h1></div>
+<div class="gradient-border" id="box">
+  <h1>{{ title }}</h1>
+</div>
 <div class="card-header">
-<a routerLink='/' >HOME</a>
-<a routerLink='/admin' *ngIf="USER.identifyUserRole()" >USER SET-UP</a>
-<a routerLink='/bill'*ngIf="USER.loggedIn()">BILL ESTIMATE</a>
-<a routerLink='/login' *ngIf="!USER.loggedIn()" style="float: right;margin-top:-12px ;">LOGIN</a>
-<a routerLink='/signup' *ngIf="!USER.loggedIn()" style="float: right;margin-top:-12px ;" >SIGNUP</a>
-<a routerLink='/logout' *ngIf="USER.loggedIn()" (click)='logout()' style="float: right;margin-top:-12px ;" >LOGOUT</a>
-
+  <a routerLink="/">HOME</a>
+  <a routerLink="/admin" *ngIf="USER.identifyUserRole()">USER SET-UP</a>
+  <a routerLink="/bill" *ngIf="USER.loggedIn()">BILL ESTIMATE</a>
+  <a
+    routerLink="/login"
+    *ngIf="!USER.loggedIn()"
+    style="float: right; margin-top: -12px;"
+    >LOGIN</a
+  >
+  <a
+    routerLink="/signup"
+    *ngIf="!USER.loggedIn()"
+    style="float: right; margin-top: -12px;"
+    >SIGNUP</a
+  >
+  <a
+    routerLink="/logout"
+    *ngIf="USER.loggedIn()"
+    (click)="logout()"
+    style="float: right; margin-top: -12px;"
+    >LOGOUT</a
+  >
 </div>

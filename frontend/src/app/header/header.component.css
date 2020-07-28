@@ -2,78 +2,114 @@
     background-image: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fswitchd.co.uk%2Fenergy%2Fguides%2Fread-energy-meter%2F&psig=AOvVaw0OuaTh7BLWe6lYJLb00KeJ&ust=1595312514046000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIiigseY2-oCFQAAAAAdAAAAABAF);
 } */
 #box {
-    /* display: flex; */
-    align-items: center;
-    justify-content: center;
-    /* width: 400px;
-    height: 200px; */
-    color: white;
-    /* font-family: 'Raleway'; */
-    font-size: 2.5rem;
-  }
-  .gradient-border {
-    --borderWidth: 3vw;
-    background: #1D1F20;
-    position: relative;
-    border-radius: var(--borderWidth);
-  }
-  .gradient-border:after {
-    content: '';
-    position: absolute;
-    top: calc(-1 * var(--borderWidth));
-    left: calc(-1 * var(--borderWidth));
-    height: calc(100% + var(--borderWidth) * 2);
-    width: calc(100% + var(--borderWidth) * 2);
-    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
-    border-radius: calc(2 * var(--borderWidth));
-    z-index: -1;
-    animation: animatedgradient 3s ease alternate infinite;
-    background-size: 300% 300%;
-  }
-  
-  
-  @keyframes animatedgradient {
-      0% {
-          background-position: 0% 50%;
-      }
-      50% {
-          background-position: 100% 50%;
-      }
-      100% {
-          background-position: 0% 50%;
-      }
-  }
-  
-h1{
-    
-    margin: 5vw;
-    border-radius: 10vw;
-    font-size: 3vw; 
-    text-align: center;
-    height: 6vw;
-    text-transform: uppercase;
-    font-family: fantasy;
-    background-color: rgb(240, 241, 219);
-    color: rgb(20, 19, 19); 
-    opacity: .9;
-    font-size: 4vw;
-    letter-spacing: .2vw;
+  margin: 5vw;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  /* width: 400px;*/
+  /* height: 100px;  */
+  color: white;
+  /* font-family: 'Raleway'; */
+  font-size: 2.5rem;
 }
-a{
-    margin: .5vw;
-    padding: 1vw;
-    text-decoration: none;
-    font-weight: bolder;
-    color: rgb(34, 33, 33);
-    font-size: 2vw;
-    background-color:paleturquoise;
-    color: rgb(17, 14, 14);
-    opacity: .9;
-    border-radius: 5px;
-    
+.gradient-border {
+  --borderWidth: 1vw;
+  background: #1d1f20;
+  position: relative;
+  border-radius: var(--borderWidth);
 }
-a:hover{
-    transform: scale(1.1);
-    background-color: rgb(247, 143, 105);
-    color: black;
+.gradient-border:after {
+  content: "";
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  background: linear-gradient(
+    60deg,
+    #f79533,
+    #f37055,
+    #ef4e7b,
+    #a166ab,
+    #5073b8,
+    #1098ad,
+    #07b39b,
+    #6fba82
+  );
+  border-radius: calc(2 * var(--borderWidth));
+  z-index: -1;
+  animation: animatedgradient 3s ease alternate infinite;
+  background-size: 300% 300%;
+}
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+h1 {
+  margin: 5vw;
+  border-radius: 5vw;
+  font-size: 3vw;
+  text-align: center;
+  height: 8vw;
+  padding-top: 2vw;
+  text-transform: uppercase;
+  font-family: fantasy;
+  background-color: rgb(240, 241, 219);
+  color: rgb(20, 19, 19);
+  opacity: 0.9;
+  font-size: 4vw;
+  letter-spacing: 0.2vw;
+}
+h1:hover {
+  animation: shake 0.5s;
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: 1;
+}
+
+@keyframes shake {
+  0% {
+    transform: skewX(-15deg);
+  }
+  5% {
+    transform: skewX(15deg);
+  }
+  10% {
+    transform: skewX(-15deg);
+  }
+  15% {
+    transform: skewX(15deg);
+  }
+  20% {
+    transform: skewX(0deg);
+  }
+  100% {
+    transform: skewX(0deg);
+  }
+}
+a {
+  margin: 0.5vw;
+  padding: 1vw;
+  text-decoration: none;
+  font-weight: bolder;
+  color: rgb(34, 33, 33);
+  font-size: 2vw;
+  background-color: paleturquoise;
+  color: rgb(17, 14, 14);
+  opacity: 0.9;
+  border-radius: 5px;
+}
+a:hover {
+  transform: scale(1.1);
+  background-color: rgb(247, 143, 105);
+  color: black;
 }

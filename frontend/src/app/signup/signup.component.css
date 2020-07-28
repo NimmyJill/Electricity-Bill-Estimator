@@ -1,9 +1,16 @@
-.container{
-    background-color: rgb(226, 225, 216);
-    border: 2px solid rebeccapurple;
-    border-radius: 2vw;
-    height: 70vh;
-    width: 50vw;
-    align-items: center;
-    margin-top: 2vh;
+.container {
+  background-color: rgb(226, 225, 216);
+  border: 2px solid rebeccapurple;
+  border-radius: 2vw;
+  height: 70vh;
+  width: 50vw;
+  align-items: center;
+  margin-top: 2vh;
+}
+
+.submit{
+    margin: 2vw;
+        margin-left: 20vw;
+        background-color: rgb(204, 58, 58);
+        font-size: large;
 }

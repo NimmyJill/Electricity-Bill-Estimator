@@ -1,130 +1,265 @@
-
 <div>
-    <div class="card" style="background-color: rgb(226, 225, 216);">
-        <div class="card-header">
-            <strong>Enter your Consumer Number and Consumer Name:</strong>  
-          </div>
-    <form>
-        <div class="form-group">
-          <label for="Consumer Number">Consumer Number</label>
-          <input type="text" class="form-control" name="consumerNum" [(ngModel)]="consumeRDetails.consumerNumber" id="consumerNumber" placeholder="Enter your Consumer Number here..">
-        </div> 
-        <div class="form-group">
-            <label for="Consumer Number">Consumer Name</label>
-            <input type="text" class="form-control" name="consumerNam" id="consumerNam" [(ngModel)]="consumeRDetails.consumerName" placeholder="Enter Consumer Name here..">
-          </div> 
-          <button type="button" class="btn btn-info" (click)="fetchDetails()" style="margin-left: 40vw;margin-bottom: 3vh;">Fetch Details</button>
-        </form>
+  <div class="card" style="background-color: rgb(226, 225, 216);">
+    <div class="card-header">
+      <strong>Enter your Consumer Number and Consumer Name:</strong>
     </div>
-</div>
-
-<div>
-    <div class="card" style="background-color: rgb(226, 225, 216);">
-        <form (ngSubmit)="fetchDetails()">
-            <div class="card-header">
-              <strong>Details</strong>  
-            </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td><label>Consumer Number</label></td>
-                                <td><input type="text" readonly name="consumerNumber" [(ngModel)]="consumerDetails.consumerNumber"></td>
-                            </tr>
-                            <tr>
-                                <td><label>Consumer Name</label></td>
-                                <td><input type="text" readonly name="consumerName" [(ngModel)]="consumerDetails.consumerName"></td>
-                            </tr>
-                            <tr>
-                                <td><label>House Name / House Number</label></td>
-                                <td><input type="text" readonly name="houseName" [(ngModel)]="consumerDetails.houseName"></td>
-                            </tr>
-                            <tr>
-                                <td><label>Last Meter Reading</label></td>
-                                <td><input type="text" readonly name="lastMeterReading" [(ngModel)]="consumerDetails.lastMeterReading"></td>
-                            </tr>
-                            <tr>
-                                <td><label>Last Bill Amount</label></td>
-                                <td><input type="text" readonly name="lastBillAmount" [(ngModel)]="consumerDetails.lastBillAmount"></td>
-                            </tr>
-                            <tr>
-                                <td><label class="control-label">Last meter reading date</label></td>
-                                <td><input type="date" readonly id="myDate" name="lastMeterReadingDate" [(ngModel)]="consumerDetails.lastMeterReadingDate" ></td> 
-                            </tr>
-                            <tr>
-                                <td><label class="control-label">Connection type </label></td>
-                                <td><input type="text" readonly name="connectionType" [(ngModel)]="consumerDetails.connectionType" ></td> 
-                            </tr>
-                           
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <div class="card" style="background-color: rgb(226, 225, 216);">
-        <div class="card-header">
-            <strong>Provide the below datas:</strong>  
-          </div>
     <form>
-        <div class="form-group">
-          <label for="Current Meter Reading">Current Meter Reading(kWH)</label>
-          <input type="number" class="form-control" id="currentMeterReading" placeholder="Enter your Current Meter Reading in kWH.">
-        </div> 
-        
-        
-          <button type="button" class="btn btn-primary" (click)="result()" style="margin-left: 40vw;margin-bottom: 3vh;">Calculate</button>
+      <div class="form-group">
+        <label for="Consumer Number">Consumer Number</label>
+        <input
+          type="text"
+          class="form-control"
+          name="consumerNum"
+          [(ngModel)]="consumeRDetails.consumerNumber"
+          id="consumerNumber"
+          placeholder="Enter your Consumer Number here.."
+        />
+      </div>
+      <div class="form-group">
+        <label for="Consumer Number">Consumer Name</label>
+        <input
+          type="text"
+          class="form-control"
+          name="consumerNam"
+          id="consumerNam"
+          [(ngModel)]="consumeRDetails.consumerName"
+          placeholder="Enter Consumer Name here.."
+        />
+      </div>
+      <button
+        type="button"
+        class="btn btn-info"
+        (click)="fetchDetails()"
+        style="margin-left: 40vw; margin-bottom: 3vh;"
+      >
+        Fetch Details
+      </button>
     </form>
-    </div>
+  </div>
 </div>
 
 <div>
-    <div class="card" style="background-color: rgb(226, 225, 216);">
-        <form (ngSubmit)="result()">
-            <div class="card-header">
-               <strong> Estimated Electricity Bill:</strong>
-            </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td><label>Current Unit Consumption</label></td>
-                                <td><input type="text" name="currentUnitConsumption" value={{currentUnitConsumption}}></td>
-                            </tr>
-                            <tr>
-                                <td><label>Daily Unit Consumption of Electricity</label></td>
-                                <td><input type="text" name="averageDailyUsage"  value={{averageDailyUsage}}></td>
-                            </tr>
-                            <tr>
-                                <td><label>Number of days until next Bill</label></td>
-                                <td><input type="text" name="daysForNextBill"  value={{daysForNextBill}}></td>
-                            </tr>
-                            <tr>
-                                <td><label>Estimated bill for current usage: Rs.</label></td>
-                                <td><input type="text" name="currentEstimateAmount"  value={{currentEstimateAmount}}></td>
-                            </tr>
-                            <tr>
-                                <td><label>Forecasted bill as per current usage: Rs.</label></td>
-                                <td><input type="text" name="billForecasted"  value={{billForecasted}} ></td>
-                            </tr>
-                            <tr>
-                                <td><label>Forecasted bill with 1 unit reduced usage per day until next bill: Rs.</label></td>
-                                <td><input type="text" name="billForecastedWith1UnitReduced"  value={{billForecastedWith1UnitReduced}} ></td>
-                            </tr>
-                            <tr>
-                                <td><label>Forecasted bill with 1 unit additional usage per day until next bill: Rs.</label></td>
-                                <td><input type="text" name="billForecastedWith1UnitAdditional"  value={{billForecastedWith1UnitAdditional}} ></td>
-                            </tr>
-                           
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </form>
+  <div class="card" style="background-color: rgb(226, 225, 216);">
+    <form (ngSubmit)="fetchDetails()">
+      <div class="card-header">
+        <strong>Details</strong>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td><label>Consumer Number</label></td>
+                <td>
+                  <input
+                    type="text"
+                    readonly
+                    name="consumerNumber"
+                    [(ngModel)]="consumerDetails.consumerNumber"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td><label>Consumer Name</label></td>
+                <td>
+                  <input
+                    type="text"
+                    readonly
+                    name="consumerName"
+                    [(ngModel)]="consumerDetails.consumerName"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td><label>House Name / House Number</label></td>
+                <td>
+                  <input
+                    type="text"
+                    readonly
+                    name="houseName"
+                    [(ngModel)]="consumerDetails.houseName"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td><label>Last Meter Reading</label></td>
+                <td>
+                  <input
+                    type="text"
+                    readonly
+                    name="lastMeterReading"
+                    [(ngModel)]="consumerDetails.lastMeterReading"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td><label>Last Bill Amount</label></td>
+                <td>
+                  <input
+                    type="text"
+                    readonly
+                    name="lastBillAmount"
+                    [(ngModel)]="consumerDetails.lastBillAmount"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label class="control-label">Last meter reading date</label>
+                </td>
+                <td>
+                  <input
+                    type="date"
+                    readonly
+                    id="myDate"
+                    name="lastMeterReadingDate"
+                    [(ngModel)]="consumerDetails.lastMeterReadingDate"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td><label class="control-label">Connection type </label></td>
+                <td>
+                  <input
+                    type="text"
+                    readonly
+                    name="connectionType"
+                    [(ngModel)]="consumerDetails.connectionType"
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div>
+  <div class="card" style="background-color: rgb(226, 225, 216);">
+    <div class="card-header">
+      <strong>Provide the below datas:</strong>
     </div>
+    <form>
+      <div class="form-group">
+        <label for="Current Meter Reading">Current Meter Reading(kWH)</label>
+        <input
+          type="number"
+          class="form-control"
+          id="currentMeterReading"
+          placeholder="Enter your Current Meter Reading in kWH."
+        />
+      </div>
+
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="result()"
+        style="margin-left: 40vw; margin-bottom: 3vh;"
+      >
+        Calculate
+      </button>
+    </form>
+  </div>
+</div>
+
+<div>
+  <div class="card" style="background-color: rgb(226, 225, 216);">
+    <form (ngSubmit)="result()">
+      <div class="card-header">
+        <strong> Estimated Electricity Bill:</strong>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td><label>Current Unit Consumption</label></td>
+                <td>
+                  <input
+                    type="text"
+                    name="currentUnitConsumption"
+                    value="{{ currentUnitConsumption }}"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td><label>Daily Unit Consumption of Electricity</label></td>
+                <td>
+                  <input
+                    type="text"
+                    name="averageDailyUsage"
+                    value="{{ averageDailyUsage }}"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td><label>Number of days until next Bill</label></td>
+                <td>
+                  <input
+                    type="text"
+                    name="daysForNextBill"
+                    value="{{ daysForNextBill }}"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td><label>Estimated bill for current usage: Rs.</label></td>
+                <td>
+                  <input
+                    type="text"
+                    name="currentEstimateAmount"
+                    value="{{ currentEstimateAmount }}"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label>Forecasted bill as per current usage: Rs.</label>
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    name="billForecasted"
+                    value="{{ billForecasted }}"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label
+                    >Forecasted bill with 1 unit reduced usage per day until
+                    next bill: Rs.</label
+                  >
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    name="billForecastedWith1UnitReduced"
+                    value="{{ billForecastedWith1UnitReduced }}"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label
+                    >Forecasted bill with 1 unit additional usage per day until
+                    next bill: Rs.</label
+                  >
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    name="billForecastedWith1UnitAdditional"
+                    value="{{ billForecastedWith1UnitAdditional }}"
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>

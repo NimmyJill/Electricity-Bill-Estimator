@@ -1,44 +1,60 @@
-<div  style="width: 90vw;height: 100vh; margin: 3vw; align-items: center;"> 
-<div class="card" style="background-color: rgb(226, 225, 216);">
-   <div class="card-header">
-       <strong>{{title}}</strong> 
+<div style="width: 90vw; height: 100vh; margin: 3vw; align-items: center;">
+  <div class="card" style="background-color: rgb(226, 225, 216);">
+    <div class="card-header">
+      <strong>{{ title }}</strong>
     </div>
     <div>
-        <button type="button" class="btn btn-primary"  [routerLink]="['/newConsumer']" style="float:right;margin:1vh 5vw;">Add Consumer</button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        [routerLink]="['/newConsumer']"
+        style="float: right; margin: 1vh 5vw;"
+      >
+        Add Consumer
+      </button>
     </div>
     <div class="card-body">
-        <div class="table-responsive" >
-            <table class="table">
-                <thead>
-                    <tr>
-                        
-                        <th>Consumer Number</th>
-                        <th>Consumer Name</th>
-                        <th>House Name / House Number</th>
-                        <th>Last Bill Amount</th>
-                        <th>Last Meter Reading</th>
-                        <th>Last Meter Reading Date</th>
-                        <th>Connection type</th>
-                       
-                    </tr>
-                </thead>
-              
-                    <tr *ngFor="let details of consumers">
-                     
-                        <td>{{details.consumerNumber}}</td>
-                        <td>{{details.consumerName}}</td>
-                        <td>{{details.houseName}}</td>
-                        <td>{{details.lastBillAmount}}</td>
-                        <td>{{details.lastMeterReading}}</td>
-                        <td>{{details.lastMeterReadingDate}}</td>
-                        <td>{{details.connectionType}}</td>
-                        <td><button class="btn btn-warning" [routerLink]='["/updateConsumer",details._id]'>Update</button></td>
-                        <td><button class="btn btn-danger" (click)="deleteConsumer(details._id)">Delete</button></td>
-                       
-                        </tr>
-                
-            </table>
-        </div>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Consumer Number</th>
+              <th>Consumer Name</th>
+              <th>House Name / House Number</th>
+              <th>Last Bill Amount</th>
+              <th>Last Meter Reading</th>
+              <th>Last Meter Reading Date</th>
+              <th>Connection type</th>
+            </tr>
+          </thead>
+
+          <tr *ngFor="let details of consumers">
+            <td>{{ details.consumerNumber }}</td>
+            <td>{{ details.consumerName }}</td>
+            <td>{{ details.houseName }}</td>
+            <td>{{ details.lastBillAmount }}</td>
+            <td>{{ details.lastMeterReading }}</td>
+            <td>{{ details.lastMeterReadingDate }}</td>
+            <td>{{ details.connectionType }}</td>
+            <td>
+              <button
+                class="btn btn-warning"
+                [routerLink]="['/updateConsumer', details._id]"
+              >
+                Update
+              </button>
+            </td>
+            <td>
+              <button
+                class="btn btn-danger"
+                (click)="deleteConsumer(details._id)"
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
-</div> 
+  </div>
 </div>

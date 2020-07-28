@@ -1,69 +1,195 @@
-<div class="card" style="background-color: rgb(226, 225, 216);">
-    <form #fields="ngForm" (ngSubmit)= "AddConsumer()">
-        <div class="card-header">
-            {{title}}
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table">
-                    <tbody>
-                        <tr [class.has-error]="productControlId.invalid && productControlId.touched"
-                        [class.has-success]="productControlId.valid">
-                          <td><label class="control-label">Consumer Number</label></td>
-                          <label class="label"><input type="text" required name="p_id" [(ngModel)]="consumer.consumerNumber" #productControlId="ngModel"></label>                    
-                          <span class="help-block" *ngIf="productControlId.invalid && productControlId.touched"> Enter Consumer Number </span>
-                      </tr>
+<div class="card">
+  <form #fields="ngForm" (ngSubmit)="AddConsumer()">
+    <div class="card-header">
+      {{ title }}
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table">
+          <tbody>
+            <tr
+              [class.has-error]="
+                productControlId.invalid && productControlId.touched
+              "
+              [class.has-success]="productControlId.valid"
+            >
+              <td><label class="control-label">Consumer Number</label></td>
+              <label class="label"
+                ><input
+                  type="text"
+                  required
+                  name="p_id"
+                  [(ngModel)]="consumer.consumerNumber"
+                  #productControlId="ngModel"
+              /></label>
+              <span
+                class="help-block"
+                *ngIf="productControlId.invalid && productControlId.touched"
+              >
+                Enter Consumer Number
+              </span>
+            </tr>
 
-                      <tr [class.has-error]="productControlNam.invalid && productControlNam.touched"
-                          [class.has-success]="productControlNam.valid">
-                          <td><label required class="control-label">Consumer Name</label></td>
-                          <label class="label"><input type="text" required name="p_name" [(ngModel)]="consumer.consumerName" #productControlNam="ngModel"></label>                                
-                          <span class="help-block" *ngIf="productControlNam.invalid && productControlNam.touched">Enter Consumer Name</span>
-                      </tr>
+            <tr
+              [class.has-error]="
+                productControlNam.invalid && productControlNam.touched
+              "
+              [class.has-success]="productControlNam.valid"
+            >
+              <td>
+                <label required class="control-label">Consumer Name</label>
+              </td>
+              <label class="label"
+                ><input
+                  type="text"
+                  required
+                  name="p_name"
+                  [(ngModel)]="consumer.consumerName"
+                  #productControlNam="ngModel"
+              /></label>
+              <span
+                class="help-block"
+                *ngIf="productControlNam.invalid && productControlNam.touched"
+                >Enter Consumer Name</span
+              >
+            </tr>
 
-                      <tr [class.has-error]="productControlCode.invalid && productControlCode.touched"
-                          [class.has-success]="productControlCode.valid">
-                          <td><label class="control-label">House Name / House Number</label></td>
-                         <label class="label"><input type="text" required name="p_code" [(ngModel)]="consumer.houseName"  #productControlCode="ngModel"></label>                            
-                          <span class="help-block" *ngIf="productControlCode.invalid && productControlCode.touched">Enter House Name / House Number</span>
-                      </tr>
+            <tr
+              [class.has-error]="
+                productControlCode.invalid && productControlCode.touched
+              "
+              [class.has-success]="productControlCode.valid"
+            >
+              <td>
+                <label class="control-label">House Name / House Number</label>
+              </td>
+              <label class="label"
+                ><input
+                  type="text"
+                  required
+                  name="p_code"
+                  [(ngModel)]="consumer.houseName"
+                  #productControlCode="ngModel"
+              /></label>
+              <span
+                class="help-block"
+                *ngIf="productControlCode.invalid && productControlCode.touched"
+                >Enter House Name / House Number</span
+              >
+            </tr>
 
-                      <tr [class.has-error]="productControlDate.invalid && productControlDate.touched"
-                          [class.has-success]="productControlDate.valid">
-                          <td><label class="control-label">Last Bill Amount</label></td>
-                          <label class="label"><input type="number" required name="l_bill" [(ngModel)]="consumer.lastBillAmount" #productControlDate="ngModel"></label>                              
-                          <span class="help-block" *ngIf="productControlDate.invalid && productControlDate.touched">Enter Last Bill Amount</span>
-                      </tr>
+            <tr
+              [class.has-error]="
+                productControlDate.invalid && productControlDate.touched
+              "
+              [class.has-success]="productControlDate.valid"
+            >
+              <td><label class="control-label">Last Bill Amount</label></td>
+              <label class="label"
+                ><input
+                  type="number"
+                  required
+                  name="l_bill"
+                  [(ngModel)]="consumer.lastBillAmount"
+                  #productControlDate="ngModel"
+              /></label>
+              <span
+                class="help-block"
+                *ngIf="productControlDate.invalid && productControlDate.touched"
+                >Enter Last Bill Amount</span
+              >
+            </tr>
 
-                      <tr [class.has-error]="productControlDescription.invalid && productControlDescription.touched"
-                          [class.has-success]="productControlDescription.valid">
-                          <td><label class="control-label">Last Meter Reading</label></td>
-                          <label class="label"><input type="number" required name="p_desc" [(ngModel)]="consumer.lastMeterReading" #productControlDescription="ngModel"></label> 
-                          <span class="help-block" *ngIf="productControlDescription.invalid && productControlDescription.touched">Enter Last Meter Reading</span>                               
-                      </tr>
+            <tr
+              [class.has-error]="
+                productControlDescription.invalid &&
+                productControlDescription.touched
+              "
+              [class.has-success]="productControlDescription.valid"
+            >
+              <td><label class="control-label">Last Meter Reading</label></td>
+              <label class="label"
+                ><input
+                  type="number"
+                  required
+                  name="p_desc"
+                  [(ngModel)]="consumer.lastMeterReading"
+                  #productControlDescription="ngModel"
+              /></label>
+              <span
+                class="help-block"
+                *ngIf="
+                  productControlDescription.invalid &&
+                  productControlDescription.touched
+                "
+                >Enter Last Meter Reading</span
+              >
+            </tr>
 
-                      <tr [class.has-error]="productControlPrice.invalid && productControlPrice.touched"
-                          [class.has-success]="productControlPrice.valid">
-                          <td><label class="control-label">Last meter reading date</label></td>
-                          <label class="label"><input type="date" id="myDate" required name="l_date" [(ngModel)]="consumer.lastMeterReadingDate" #productControlPrice="ngModel"></label> 
-                          <span class="help-block"*ngIf="productControlPrice.invalid && productControlPrice.touched"> Last meter reading date is required</span>                                
-                      </tr>
+            <tr
+              [class.has-error]="
+                productControlPrice.invalid && productControlPrice.touched
+              "
+              [class.has-success]="productControlPrice.valid"
+            >
+              <td>
+                <label class="control-label">Last meter reading date</label>
+              </td>
+              <label class="label"
+                ><input
+                  type="date"
+                  id="myDate"
+                  required
+                  name="l_date"
+                  [(ngModel)]="consumer.lastMeterReadingDate"
+                  #productControlPrice="ngModel"
+              /></label>
+              <span
+                class="help-block"
+                *ngIf="
+                  productControlPrice.invalid && productControlPrice.touched
+                "
+              >
+                Last meter reading date is required</span
+              >
+            </tr>
 
-                      <tr [class.has-error]="productControlStar.invalid && productControlStar.touched"
-                          [class.has-success]="productControlStar.valid">
-                          <td><label class="control-label">Connection type </label></td>
-                          <label class="label"><input type="text" required name="p_rating" [(ngModel)]="consumer.connectionType" #productControlStar="ngModel"></label> 
-                          <span class="help-block" *ngIf="productControlStar.invalid && productControlStar.touched">Enter Connection type</span>                               
-                      </tr>
+            <tr
+              [class.has-error]="
+                productControlStar.invalid && productControlStar.touched
+              "
+              [class.has-success]="productControlStar.valid"
+            >
+              <td><label class="control-label">Connection type </label></td>
+              <label class="label"
+                ><input
+                  type="text"
+                  required
+                  name="p_rating"
+                  [(ngModel)]="consumer.connectionType"
+                  #productControlStar="ngModel"
+              /></label>
+              <span
+                class="help-block"
+                *ngIf="productControlStar.invalid && productControlStar.touched"
+                >Enter Connection type</span
+              >
+            </tr>
 
-                     
-                        <tr>
-                            <td></td>
-                            <td><input type="submit" [disabled]="fields.invalid" style="background-color:darkred; color:white" value="Submit" /></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </form>
+            <tr>
+              <td></td>
+              <td>
+                <input
+                  type="submit"
+                  [disabled]="fields.invalid"
+                  style="background-color: darkred; color: white;"
+                  value="Submit"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </form>
 </div>

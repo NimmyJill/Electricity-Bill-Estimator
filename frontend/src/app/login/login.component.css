@@ -1,0 +1,8 @@
+.container {
+  border: 2px solid maroon;
+  background-color: rgb(226, 225, 216);
+  border-radius: 2vw;
+  padding: 2vw;
+  width: 50vw;
+  height: 55vh;
+}
