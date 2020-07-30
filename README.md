@@ -2,7 +2,7 @@
 
 <ul>
   <li> Sign-up provision with admin type and other user type. Full access for admin only.</li>
-  <li><strong>For type Admin, Consumer Name: admin and Password: admin@12345</strong></li>
+  <li><strong>For Admin, Consumer Name: admin and Password: admin@12345</strong></li>
   <li> CRUD operations in User-setup(*Admin only)</li>
   <li> Electricity Bill calculation for a span of 60 days is based on the tariff structure shown in the below table.</li>
   <li> Forecasted bill amount as per the current usage. </li>
