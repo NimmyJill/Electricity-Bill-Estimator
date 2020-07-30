@@ -3,26 +3,26 @@
     <h1 style="text-align: center;">Create Your Account</h1>
   </div>
 
-  <form (ngSubmit)="signup()">
-    <div style="padding-left: 5vw; padding-top: 3vw; color: gray;">
+  <form (ngSubmit)="signup()" #userSignUp= "ngForm">
+    <div style="padding-left: 5vw; padding-top: 3vw; color: rgb(109, 73, 57);">
       <h3>User Type</h3>
-      <label style="margin: 1vw;" class="radio-inline">
-        <input
-          type="radio"
-          name="optradio"
-          checked
-          id="radioAdmin"
-          value="admin"
-        />Admin
-      </label>
       <label class="radio-inline">
         <input
           style="margin: 1vw;"
+          checked
           type="radio"
           name="optradio"
           id="radioNormal"
           value="other"
         />Other Users
+      </label>
+      <label style="margin: 1vw;" class="radio-inline">
+        <input
+          type="radio"
+          name="optradio"
+          id="radioAdmin"
+          value="admin"
+        />Admin
       </label>
     </div>
     <br />
@@ -34,6 +34,7 @@
         id="consumerName"
         name="consumerName"
         [(ngModel)]="userCredential.consumerName"
+        required
       />
     </div>
     <br />
@@ -44,11 +45,17 @@
         id="pswd"
         name="pswd"
         [(ngModel)]="userCredential.password"
-      />
+        #pswd="ngModel"
+        [class.is-invalid]="pswd.invalid && pswd.touched" 
+        required
+        pattern="^(?=.*\d).{8,}$"
+        />
+        <br>
+        <small class="text-danger" [class.d-none]="pswd.valid || pswd.touched">Please Enter a Valid Password with minimum 8 characters and one number</small>
     </div>
 
     <br />
-    <button class="submit" type="submit">
+    <button class="submit" type="submit" [disabled]="userSignUp.form.invalid">
       Submit
     </button>
   </form>

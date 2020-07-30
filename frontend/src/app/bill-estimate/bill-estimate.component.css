@@ -1,3 +1,21 @@
 div {
   margin: 2vw;
 }
+.wrap{
+width: 90%;
+box-sizing: border-box;
+border: 3px solid #0cd808;
+box-shadow: 0 0 1px #b3ff51, 0 0 2px #b3ff51, 0 0 6px #b3ff51, 0 0 12px #b3ff51, inset 0 0 1px #b3ff51, inset 0 0 2px #b3ff51, inset 0 0 6px #b3ff51, inset 0 0 12px #b3ff51;
+}
+.wrapp{
+width: 90%;
+box-sizing: border-box;
+border: 3px solid #b2d808;
+box-shadow: 0 0 1px #b3ff51, 0 0 2px #b3ff51, 0 0 6px #f3ff51, 0 0 12px #b3ff51, inset 0 0 1px #f3ff51, inset 0 0 2px #f3ff51, inset 0 0 6px #b3ff51, inset 0 0 12px #b3ff51;
+}
+  .wrapper{
+width: 90%;
+box-sizing: border-box;
+border: 3px solid #d82708;
+box-shadow: 0 0 1px #ff5194, 0 0 2px #ffb951, 0 0 6px #ff7451, 0 0 12px #ff9751, inset 0 0 1px #ffae51, inset 0 0 2px #ff7451, inset 0 0 6px #ffc851, inset 0 0 12px #ff5151;
+}

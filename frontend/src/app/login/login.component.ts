@@ -17,18 +17,26 @@ export class LoginComponent implements OnInit {
   login() {
     console.log('Logged In');
     console.log(this.userDetails);
-    this.usersService.login(this.userDetails).subscribe((credential) => {
-      console.log(credential);
 
-      if (credential == null) {
+    this.usersService.login(this.userDetails).subscribe((res) => {
+      if (res['message'] == 'Invalid credentials') {
         console.log('Invalid Details!!');
         alert('Invalid Details!!');
-
         this.router.navigate(['/login']);
       } else {
-        localStorage.setItem('token', credential['token']);
-        console.log('Valid Details!!');
-        this.router.navigate(['/bill']);
+        console.log(res['user']);
+        if (
+          res['user'].consumerName == 'admin' &&
+          res['user'].password == 'admin@12345' &&
+          res['user'].type == 'admin'
+        ) {
+          localStorage.setItem('token', res['token']);
+          console.log('Valid Details!!');
+          this.router.navigate(['/admin']);
+        } else if (res['user'].type == 'other') {
+          localStorage.setItem('token', res['token']);
+          this.router.navigate(['/bill']);
+        }
       }
     });
   }

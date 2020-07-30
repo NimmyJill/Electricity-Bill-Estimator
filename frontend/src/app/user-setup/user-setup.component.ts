@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ConsumerDetailsModel } from './consumerDetails.model';
 import { ConsumersService } from '../consumers.service';
 import { Router } from '@angular/router';
@@ -9,8 +9,9 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './user-setup.component.html',
   styleUrls: ['./user-setup.component.css'],
 })
-export class UserSetupComponent implements OnInit {
+export class UserSetupComponent implements OnInit, OnDestroy {
   title: String = 'User-setup *Admin only';
+  sub;
   //Product is the model class for a product item
   consumers = <any>[];
 
@@ -29,10 +30,14 @@ export class UserSetupComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    //calling getProducts() and loading the products to products array
-    this.ConsumersService.getConsumers().subscribe((data) => {
-      this.consumers = JSON.parse(JSON.stringify(data));
-      console.log(this.consumers);
-    });
+    this.sub =
+      //calling getProducts() and loading the products to products array
+      this.ConsumersService.getConsumers().subscribe((data) => {
+        this.consumers = JSON.parse(JSON.stringify(data));
+        console.log(this.consumers);
+      });
+  }
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 }
