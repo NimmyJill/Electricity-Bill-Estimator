@@ -1,6 +1,7 @@
 <h2>Electricity-Bill-Estimator</h2>
 
 <ul>
+  <li>Node JS + ExpressJS in server side, Angular in frondEnd, MongoDB Atlas dataBase.</li>
   <li> Sign-up provision with admin type and other user type. Full access for admin only.</li>
   <li><strong>For Admin, Consumer Name: admin and Password: admin@12345</strong></li>
   <li> CRUD operations in User-setup(*Admin only). Admin can update or delete consumer's details.</li>
